@@ -92,5 +92,6 @@ for rule in rules_response['SecurityGroupRules']:
     print(f"   Protocol: {rule['IpProtocol']}")
     print(f"   Port Range: {str(rule['FromPort'])}-{str(rule['ToPort'])}")
     print(f"   IP Range: {rule['CidrIpv4']}")
+    print(f"   Rule Description: {rule['Description']}")
     print("")
     print('--------------------------------------------------------------------')
