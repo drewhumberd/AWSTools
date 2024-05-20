@@ -48,6 +48,11 @@ while gettingcidrs:
         portrange["startingport"] = int(input("Provide the first port in the port range for the specified CIDR.\n"))
         portrange["endport"] = int(input("Provide the last port in the port range for the specified CIDR. Same as first port if only one port in range is needed.\n"))
         portrange["protocol"] = input("TCP or UDP?\n").upper()
+        description = input("Provide a description for this rule. If none is necessary, put 'none'.\n")
+        if description == "none":
+            portrange["description"] = ""
+        else:
+            portrange["description"] = description
         portrange["cidr"] = cidr
         cidrs[cidr].append(portrange)
         contports = input("Need to add more ports? Y/N\n")
@@ -67,7 +72,7 @@ for cidr in cidrs.values():
                 "IpRanges": [
                     {
                         "CidrIp": rule["cidr"],
-                        "Description": ""
+                        "Description": rule["description"]
                     }
                 ],
                 "ToPort": rule["endport"]
