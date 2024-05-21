@@ -5,3 +5,5 @@ Tools I've created to make my life as an AWS developer/technician a bit easier.
 **securitygroups.py** - provides a simple user interface for creating and adding rules to security groups (if you've ever tried to do this at any kind of scale in the console GUI you'll know my pain).
 
 **sgrules.py** - describes all security group rules in a region and outputs to CSV.
+
+**sgbycsv.py** - create a security group via CSV. skips header line, lines should include (in this order) CIDR, starting port, ending port, protocol, description.

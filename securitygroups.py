@@ -7,7 +7,7 @@ print("Welcome to the Security Group Maker")
 new_sg_answer = input("Is this a new security group? Y/N\n").lower()
 if new_sg_answer == "y":
     vpc = input("Please provide the VPC ID where the security group will be built.\n")
-    sg_name = input("Please provde a name for the security group.\n")
+    sg_name = input("Please provide a name for the security group.\n")
     sg_desc = input("Please provide a description for the security group.\n")
     sg_response = client.create_security_group(
         Description=sg_desc,
